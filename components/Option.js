@@ -5,6 +5,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import { HANDS } from '../constants';
 
 export default class Option extends React.Component {
   static propTypes = {
@@ -19,12 +20,7 @@ export default class Option extends React.Component {
   }
 
   randomHand() {
-    const hands = [
-      'paper',
-      'scissors',
-      'rock'
-    ];
-    return hands[Math.floor(Math.random() * hands.length)]
+    return HANDS[Math.floor(Math.random() * HANDS.length)]
   }
 
   play() {
@@ -39,16 +35,10 @@ export default class Option extends React.Component {
       console.log('tie game')
     }
 
-    const hands = [
-      'paper',
-      'scissors',
-      'rock'
-    ];
+    const playerIndex = HANDS.indexOf(playerHand);
+    const cpuIndex = HANDS.indexOf(cpuHand);
 
-    const playerIndex = hands.indexOf(playerHand);
-    const cpuIndex = hands.indexOf(cpuHand);
-
-    if (hands[(playerIndex + 1) % hands.length] == cpuHand) {
+    if (HANDS[(playerIndex + 1) % HANDS.length] == cpuHand) {
       console.log('you lose')
     }
 
@@ -56,9 +46,9 @@ export default class Option extends React.Component {
       console.log('you win')
     }
   }
+
   render() {
     const { name } = this.props;
-
     return (
       <View style={styles.option}>
         <TouchableHighlight onPress={this.play} style={styles[name]}>
