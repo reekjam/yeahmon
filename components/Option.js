@@ -52,7 +52,7 @@ export default class Option extends React.Component {
       console.log('you lose')
     }
 
-    if (hands[(playerIndex - 1) % hands.length] == cpuHand) {
+    if (HANDS[(playerIndex + 2) % HANDS.length] == cpuHand) {
       console.log('you win')
     }
   }

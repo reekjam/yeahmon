@@ -3,7 +3,7 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import Option from './Option';
+import OptionContainer from '../containers/OptionContainer';
 
 export default class Game extends React.Component {
   render() {
@@ -17,7 +17,7 @@ export default class Game extends React.Component {
       <View style={styles.container}>
         {options.map((option, i) => {
           return (
-            <Option key={i} name={option} />
+            <OptionContainer key={i} name={option} />
           );
         })}
       </View>
