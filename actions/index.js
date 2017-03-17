@@ -1,7 +1,7 @@
-export const playHand = (playerHand, cpuHand) => {
+export const startMatch = (playerHand) => {
+  console.log('dispatching START_MATCH: ', playerHand)
   return {
-    type: 'PLAY_HAND',
-    playerHand,
-    cpuHand
+    type: 'START_MATCH',
+    playerHand
   };
 };

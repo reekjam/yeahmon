@@ -5,7 +5,6 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { HANDS } from '../constants';
 
 export default class Option extends React.Component {
   static propTypes = {
@@ -14,25 +13,9 @@ export default class Option extends React.Component {
   }
   static displayName = 'Option'
 
-  compareHands(playerHand, cpuHand) {
-    if (playerHand === cpuHand) {
-      console.log('tie game')
-    }
-
-    const playerIndex = HANDS.indexOf(playerHand);
-    const cpuIndex = HANDS.indexOf(cpuHand);
-
-    if (HANDS[(playerIndex + 1) % HANDS.length] == cpuHand) {
-      console.log('you lose')
-    }
-
-    if (HANDS[(playerIndex + 2) % HANDS.length] == cpuHand) {
-      console.log('you win')
-    }
-  }
-
   render() {
     const { name, onOptionPress } = this.props;
+    
     return (
       <View style={styles.option}>
         <TouchableHighlight onPress={onOptionPress} style={styles[name]}>
