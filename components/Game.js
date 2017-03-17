@@ -3,6 +3,7 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
+import ScoreboardContainer from '../containers/ScoreboardContainer';
 import OptionContainer from '../containers/OptionContainer';
 
 export default class Game extends React.Component {
@@ -14,18 +15,25 @@ export default class Game extends React.Component {
     ]
 
     return (
-      <View style={styles.container}>
-        {options.map((option, i) => {
-          return (
-            <OptionContainer key={i} name={option} />
-          );
-        })}
+      <View style={styles.main}>
+        <ScoreboardContainer />
+        <View style={styles.container}>
+          {options.map((option, i) => {
+            return (
+              <OptionContainer key={i} name={option} />
+            );
+          })}
+        </View>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    flexDirection: 'column'
+  },
   container: {
     flex: 1,
     flexDirection: 'row',

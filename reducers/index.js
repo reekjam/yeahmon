@@ -1,8 +1,8 @@
 const initialState = {
   playerHand: '',
   cpuHand: '',
-  playerScore: '',
-  cpuScore: '',
+  playerScore: 0,
+  cpuScore: 0,
   verdict: ''
 }
 
