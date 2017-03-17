@@ -10,25 +10,9 @@ import { HANDS } from '../constants';
 export default class Option extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
+    onOptionPress: PropTypes.func.isRequired,
   }
   static displayName = 'Option'
-
-  constructor(props) {
-    super(props);
-
-    this.play = this.play.bind(this);
-  }
-
-  randomHand() {
-    return HANDS[Math.floor(Math.random() * HANDS.length)]
-  }
-
-  play() {
-    const playerHand = this.props.name;
-    const randomHand = this.randomHand();
-
-    this.compareHands(playerHand, randomHand)
-  }
 
   compareHands(playerHand, cpuHand) {
     if (playerHand === cpuHand) {
@@ -48,10 +32,10 @@ export default class Option extends React.Component {
   }
 
   render() {
-    const { name } = this.props;
+    const { name, onOptionPress } = this.props;
     return (
       <View style={styles.option}>
-        <TouchableHighlight onPress={this.play} style={styles[name]}>
+        <TouchableHighlight onPress={onOptionPress} style={styles[name]}>
           <Text style={styles.optionText}>{ name }</Text>
         </TouchableHighlight>
       </View>
