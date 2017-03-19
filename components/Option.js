@@ -5,6 +5,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import { mapNameToEmoji } from '../helpers/emoji-mapper';
 
 export default class Option extends React.Component {
   static propTypes = {
@@ -15,11 +16,11 @@ export default class Option extends React.Component {
 
   render() {
     const { name, onOptionPress } = this.props;
-    
+
     return (
       <View style={styles.option}>
-        <TouchableHighlight onPress={onOptionPress} style={styles[name]}>
-          <Text style={styles.optionText}>{ name }</Text>
+        <TouchableHighlight onPress={onOptionPress} style={styles.optionHand}>
+          <Text style={styles.optionText}>{mapNameToEmoji(name)}</Text>
         </TouchableHighlight>
       </View>
     )
@@ -30,20 +31,10 @@ const styles = StyleSheet.create({
   option: {
     flex: 1,
   },
+  optionHand: {
+    alignItems: 'center'
+  },
   optionText: {
-    fontSize: 26,
-    color: 'white'
+    fontSize: 40,
   },
-  paper: {
-    backgroundColor: 'blue',
-    alignItems: 'center',
-  },
-  scissors: {
-    backgroundColor: 'orange',
-    alignItems: 'center',
-  },
-  rock: {
-    backgroundColor: 'purple',
-    alignItems: 'center',
-  }
 })
