@@ -1,7 +1,7 @@
-import { HANDS } from '../constants';
+import { handOptions } from '../constants';
 
 const randomHand = () => {
-  return HANDS[Math.floor(Math.random() * HANDS.length)]
+  return handOptions[Math.floor(Math.random() * handOptions.length)]
 }
 
 const determineOutcome = (store, playerHand, cpuHand) => {
@@ -12,17 +12,17 @@ const determineOutcome = (store, playerHand, cpuHand) => {
     })
   }
 
-  const playerIndex = HANDS.indexOf(playerHand);
-  const cpuIndex = HANDS.indexOf(cpuHand);
+  const playerIndex = handOptions.indexOf(playerHand);
+  const cpuIndex = handOptions.indexOf(cpuHand);
 
-  if (HANDS[(playerIndex + 1) % HANDS.length] == cpuHand) {
+  if (handOptions[(playerIndex + 1) % handOptions.length] == cpuHand) {
     store.dispatch({
       type: 'CPU_WIN',
       verdict: 'you lose'
     })
   }
 
-  if (HANDS[(playerIndex + 2) % HANDS.length] == cpuHand) {
+  if (handOptions[(playerIndex + 2) % handOptions.length] == cpuHand) {
     store.dispatch({
       type: 'PLAYER_WIN',
       verdict: 'you win'

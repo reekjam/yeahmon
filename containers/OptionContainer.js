@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startMatch } from '../actions';
 import Option from '../components/Option';
-import { HANDS } from '../constants';
 
 const mapStateToProps = (state, ownProps) => ({
   ...ownProps,
