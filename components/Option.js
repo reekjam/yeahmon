@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import {
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   StyleSheet,
   View,
 } from 'react-native';
@@ -19,9 +19,9 @@ export default class Option extends React.Component {
 
     return (
       <View style={styles.option}>
-        <TouchableHighlight onPress={onOptionPress} style={styles.optionHand}>
+        <TouchableOpacity onPress={onOptionPress} style={styles.optionHand}>
           <Text style={styles.optionText}>{mapNameToEmoji(name)}</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     )
   }
