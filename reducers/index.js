@@ -12,7 +12,7 @@ const initialState = {
   cpuScore: 0,
   results: {
     verdict: '',
-    verb: ''
+    descriptor: ''
   }
 }
 
