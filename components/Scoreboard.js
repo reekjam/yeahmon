@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { mapNameToEmoji } from '../helpers/emoji-mapper';
 import {
   Text,
   View,
@@ -25,13 +26,16 @@ export default class Scoreboard extends React.Component {
 
     return (
       <View style={styles.container}>
-        <View style={styles.verdict}>
-          <Text>{results.verdict}</Text>
-          <Text>{playerHand}{results.descriptor}{cpuHand}</Text>
+        <View style={styles.results}>
+          <Text style={styles.verdict}>{results.verdict}</Text>
+        </View>
+        <View style={styles.hands}>
+          <Text style={styles.hand}>{mapNameToEmoji(playerHand)}</Text>
+          <Text style={styles.hand}>{mapNameToEmoji(cpuHand)}</Text>
         </View>
         <View style={styles.scores}>
-          <Text style={styles.score}>Your Score: {playerScore}</Text>
-          <Text style={styles.score}>CPU Score: {cpuScore}</Text>
+          <Text style={styles.score}>{playerScore}</Text>
+          <Text style={styles.score}>{cpuScore}</Text>
         </View>
       </View>
     )
@@ -41,22 +45,33 @@ export default class Scoreboard extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: 'lightgreen'
+  },
+  results: {
+    flex: 2,
+    backgroundColor: '#4D4C69',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  verdict: {
+    fontSize: 25,
+    color: '#BEBF5B'
+  },
+  hands: {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#4D4C69',
+  },
+  hand: {
+    fontSize: 80,
   },
   scores: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'center',
   },
   score: {
     fontSize: 20,
-    color: 'white'
-  },
-  verdict: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    color: '#3C3740',
   }
 })

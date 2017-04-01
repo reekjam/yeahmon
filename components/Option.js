@@ -18,23 +18,21 @@ export default class Option extends React.Component {
     const { name, onOptionPress } = this.props;
 
     return (
-      <View style={styles.option}>
-        <TouchableOpacity onPress={onOptionPress} style={styles.optionHand}>
-          <Text style={styles.optionText}>{mapNameToEmoji(name)}</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity onPress={onOptionPress} style={styles.optionHand}>
+        <Text style={styles.optionText}>{mapNameToEmoji(name)}</Text>
+      </TouchableOpacity>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  option: {
-    flex: 1,
-  },
   optionHand: {
-    alignItems: 'center'
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   optionText: {
     fontSize: 40,
+    paddingBottom: 10
   },
 })

@@ -27,7 +27,6 @@ export default class Game extends React.Component {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    flexDirection: 'column'
   },
   container: {
     flex: 1,
