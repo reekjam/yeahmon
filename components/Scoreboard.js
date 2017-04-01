@@ -13,6 +13,14 @@ export default class Scoreboard extends React.Component {
     results: PropTypes.object.isRequired
   }
 
+  _renderVerdict() {
+    const { results: { verdict } } = this.props;
+
+    return verdict.length ?
+    <Text style={styles.verdict}>{verdict}</Text> :
+    <Text style={styles.instructions}>Pick a hand from the bottom</Text>
+  }
+
   render() {
     const {
       playerHand,
@@ -25,7 +33,7 @@ export default class Scoreboard extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.results}>
-          <Text style={styles.verdict}>{results.verdict}</Text>
+          {this._renderVerdict()}
         </View>
         <HandsContainer />
         <View style={styles.scores}>
@@ -40,7 +48,7 @@ export default class Scoreboard extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3C3740'
+    backgroundColor: '#4D4C69'
   },
   results: {
     flex: 2,
@@ -48,7 +56,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   verdict: {
-    fontSize: 25,
+    fontSize: 30,
+    color: '#BEBF5B'
+  },
+  instructions: {
+    fontSize: 20,
     color: '#BEBF5B'
   },
   scores: {

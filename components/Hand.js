@@ -14,7 +14,7 @@ export default class Hand extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bounceValue: new Animated.Value(0)
+      bounceValue: new Animated.Value(1)
     }
   }
 

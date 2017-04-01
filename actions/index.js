@@ -37,7 +37,7 @@ const tieGame = () => {
   return {
     type: TIE_GAME,
     results: {
-      verdict: 'tie game'
+      verdict: 'Tie game'
     }
   }
 }
@@ -46,7 +46,7 @@ const playerWin = () => {
   return {
     type: PLAYER_WIN,
     results: {
-      verdict: 'you win'
+      verdict: 'You win'
     }
   }
 }
@@ -55,7 +55,7 @@ const playerLose = (store) => {
   return {
     type: PLAYER_LOSE,
     results: {
-      verdict: 'you lose'
+      verdict: 'You lose'
     }
   }
 }

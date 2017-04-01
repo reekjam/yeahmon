@@ -14,7 +14,7 @@ export default class Hands extends React.Component {
 
   render() {
     const { playerHand, cpuHand } = this.props;
-
+    
     return (
       <View style={styles.hands}>
         <Hand hand={playerHand} />

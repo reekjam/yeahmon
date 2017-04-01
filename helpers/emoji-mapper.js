@@ -19,7 +19,26 @@ export const mapNameToEmoji = (name) => {
       );
       break;
     default:
-      return '';
+      return (
+        <Emoji name={randomEmoji()} />
+      );
       break;
   }
+}
+
+const randomEmoji = () => {
+  let options = [
+    'pizza',
+    'ghost',
+    'jack_o_lantern',
+    'robot_face',
+    'skull',
+    'alien',
+    'taco',
+    'burrito',
+    'fries',
+    'hamburger'
+  ];
+
+  return options[Math.floor(Math.random() * options.length)]
 }
