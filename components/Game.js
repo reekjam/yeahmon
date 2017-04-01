@@ -11,8 +11,10 @@ export default class Game extends React.Component {
   render() {
     return (
       <View style={styles.main}>
-        <ScoreboardContainer />
-        <View style={styles.container}>
+        <View style={styles.scoreboard}>
+          <ScoreboardContainer />
+        </View>
+        <View style={styles.hands}>
           {handOptions.map((option, i) => {
             return (
               <OptionContainer key={i} name={option} />
@@ -28,11 +30,14 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
   },
-  container: {
-    flex: 1,
+  hands: {
+    flex: 2,
     flexDirection: 'row',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  scoreboard: {
+    flex: 5
+  }
 })

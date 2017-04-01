@@ -40,10 +40,10 @@ export default class Scoreboard extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#3C3740'
   },
   results: {
     flex: 2,
-    backgroundColor: '#4D4C69',
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -58,6 +58,6 @@ const styles = StyleSheet.create({
   },
   score: {
     fontSize: 20,
-    color: '#3C3740',
+    color: '#BEBF5B',
   }
 })
