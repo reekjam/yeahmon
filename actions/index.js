@@ -5,9 +5,6 @@ import {
   PLAYER_WIN,
   PLAYER_LOSE,
   TIE_GAME,
-  DESCRIBE_PLAYER_WIN,
-  DESCRIBE_PLAYER_LOSE,
-  DESCRIBE_TIE_GAME
 } from '../constants';
 
 const randomHand = () => {
@@ -40,8 +37,7 @@ const tieGame = () => {
   return {
     type: TIE_GAME,
     results: {
-      verdict: 'tie game',
-      descriptor: DESCRIBE_TIE_GAME
+      verdict: 'tie game'
     }
   }
 }
@@ -50,8 +46,7 @@ const playerWin = () => {
   return {
     type: PLAYER_WIN,
     results: {
-      verdict: 'you win',
-      descriptor: DESCRIBE_PLAYER_WIN
+      verdict: 'you win'
     }
   }
 }
@@ -60,8 +55,7 @@ const playerLose = (store) => {
   return {
     type: PLAYER_LOSE,
     results: {
-      verdict: 'you lose',
-      descriptor: DESCRIBE_PLAYER_LOSE
+      verdict: 'you lose'
     }
   }
 }

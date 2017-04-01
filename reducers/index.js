@@ -22,8 +22,7 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
         playerScore: state.playerScore += 1,
         results: {
-          verdict: action.results.verdict,
-          descriptor: action.results.descriptor
+          verdict: action.results.verdict
         }
       });
       break;
@@ -31,16 +30,14 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
         cpuScore: state.cpuScore += 1,
         results: {
-          verdict: action.results.verdict,
-          descriptor: action.results.descriptor
+          verdict: action.results.verdict
         }
       });
       break;
     case TIE_GAME:
       return Object.assign({}, state, {
         results: {
-          verdict: action.results.verdict,
-          descriptor: action.results.descriptor
+          verdict: action.results.verdict
         }
       });
       break;
